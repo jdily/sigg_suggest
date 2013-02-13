@@ -1,6 +1,5 @@
-# scrape the NIPS25.html file looking for authors names, titles
-# and create a database of all papers. This is necessary because
-# extracting the authors and titles from PDFs directly is tricky.
+# scrape the siggraph proceeding index.html
+# looking for the authors names, titles and create a database of all papers.
 
 from HTMLParser import HTMLParser
 import cPickle as pickle
@@ -62,7 +61,8 @@ class MyHTMLParser(HTMLParser):
 
 
 parser = MyHTMLParser()
-f = open('nips25offline/nips25.html').read()
+f = open("../../paper_pool/siga12/index.html").read()
+#f = open('nips25offline/nips25.html').read()
 parser.feed(f)
 
 outdict = {}
